@@ -636,9 +636,9 @@ Automate fini de L${_0}$ : \\
 \tab \tab \tab 
 \node[main] (0) {0}; 
 \node (10) [right of=0] {}; 
-\node[main] (1) [right of=10] {1}; 
-\node[main] (2) [below of=1] {2};
-\node[main] (3) [above of=1] {3}; 
+\node[main] (1) [right of=10] {2}; 
+\node[main] (2) [below of=1] {3};
+\node[main] (3) [above of=1] {1}; 
 \node (11) [right of=1] {}; 
 \node (12) [right of=2] {}; 
 \node (13) [right of=3] {}; 
@@ -664,7 +664,12 @@ On interpr\`etre la question comme suit :Il peut y avoir plusieurs appariements 
 
 Expression rationnelle de L${_1}$ : \\
 
-c${^*}$ac${^*}$uc${^*}$ | c${^*}$uc${^*}$ac${^*}$ | a${^*}$ga${^*}$ca${^*}$ | a${^*}$ca${^*}$ga${^*}$ | ug | gu \\ \\
+(c | a)${^*}$ a (c | a)${^*}$ u (c | a)${^*}$ | (c | u)${^*}$ a (c | u)${^*}$ u (c | u)${^*}$ | \\
+\tab (c | a)${^*}$ u (c | a)${^*}$ a (c | a)${^*}$ | (c | u)${^*}$ u (c | u)${^*}$ a (c | u)${^*}$  | \\
+\tab (c | a)${^*}$ g (c | a)${^*}$ c (c | a)${^*}$  | (g | a)${^*}$ g (g | a)${^*}$ c (g | a)${^*}$  | \\
+\tab (c | a)${^*}$ c (c | a)${^*}$ g (c | a)${^*}$  | (g | a)${^*}$ c (g | a)${^*}$ g (g | a)${^*}$ | \\ 
+\tab gu | ug \\
+
 
 Automate fini de L${_1}$ :
 
@@ -673,78 +678,111 @@ Automate fini de L${_1}$ :
 \node[main] (1) [right of=0] {1}; 
 \node (8) [right of=1] {}; 
 \node (10) [above of=1] {}; 
-\node[main] (2) [above right of=8] {2};
-\node[main] (3) [below right of=8] {3}; 
-\node (9) [below right of=2] {}; 
+\node[main] (2) [below right of=8] {3};
+\node[main] (3) [above right of=8] {2}; 
+\node (9) [above right of=2] {}; 
 \node[main] (6) [right of=9] {4};
 \node (7) [right of=6] {};
 
-\node (a1) [below of=0] {};
-\node (a2) [below of=a1] {}; 
-\node (a7) [below of=a2] {}; 
+\node (a1) [below of=0] {}; 
+\node (a3) [below of=a1] {}; 
+\node (a7) [below of=a3] {}; 
+\node (a8) [right of=a7] {}; 
+\node (a9) [right of=a8] {}; 
 
-\node[main] (11) [right of=a7] {5}; 
+\node[main] (11) [right of=a9] {5}; 
 \node (18) [right of=11] {}; 
 \node (110) [above of=11] {}; 
-\node[main] (12) [below right of=18] {7};
-\node[main] (13) [above right of=18] {6}; 
+\node[main] (12) [below right of=18] {8};
+\node[main] (13) [above of=12] {7}; 
+\node[main] (14) [below of=12] {9};
+\node[main] (15) [above of=13] {6}; 
 \node (19) [above right of=12] {}; 
-\node[main] (16) [right of=19] {8};
+\node[main] (16) [right of=19] {10};
 \node (17) [right of=16] {};
 
+
 \node (b2) [below of=a7] {}; 
-\node[main] (auguste) [left of=11] {0}; 
+\node[main] (auguste) [left of=b2] {0}; 
 \node (auguste0) [left of=auguste] {}; 
 \node (b3) [below of=b2] {}; 
 \node (b7) [below of=b3] {}; 
 
-\node[main] (21) [right of=b7] {9}; 
+
+\node[main] (21) [right of=b7] {11}; 
 \node (28) [right of=21] {}; 
 \node (210) [above of=21] {}; 
-\node[main] (22) [below right of=28] {11};
-\node[main] (23) [above right of=28] {10}; 
+\node[main] (22) [below right of=28] {13};
+\node[main] (23) [above right of=28] {12}; 
 \node (29) [above right of=22] {}; 
-\node[main] (26) [right of=29] {12};
+\node[main] (26) [right of=29] {14};
 \node (27) [right of=26] {};
 
 \node (c1) [below of=b7] {}; 
 \node (c2) [below of=c1] {}; 
 \node (c7) [below of=c2] {}; 
-\node (c8) [right of=c7] {}; 
-\node (c9) [right of=c8] {}; 
+
+\node[main] (31) [right of=c7] {15}; 
+\node (38) [right of=31] {}; 
+\node (310) [above of=31] {}; 
+\node[main] (32) [below right of=38] {17};
+\node[main] (33) [above right of=38] {16}; 
+\node (39) [above right of=32] {}; 
+\node[main] (36) [right of=39] {18};
+\node (37) [right of=36] {};
+
 
 \path [->]  (1) edge node[above] {u} (3);
 \path [->]  (1) edge node[above] {a} (2);
-\path [->]  (2) edge [loop above] node {c} (2);
-\path [->]  (3) edge [loop above] node{c} (3);
-\path [->]  (1) edge [loop above] node {c} (1);
-\path [->]  (6) edge [loop above] node {c} (6);
+\path [->]  (2) edge [loop above] node {c,u} (2);
+\path [->]  (3) edge [loop above] node {c,u} (3);
+\path [->]  (1) edge [loop above] node {c,u} (1);
+\path [->]  (6) edge [loop above] node {c,u} (6);
 \path [->]  (2) edge node[above] {u} (6);
 \path [->]  (3) edge node[above] {a} (6);
 \path [->]  (6) edge node {} (7);
 
 \path [->]  (11) edge node[above] {u} (13);
 \path [->]  (11) edge node[above] {a} (12);
-\path [->]  (12) edge [loop above] node {a} (12);
-\path [->]  (13) edge [loop above] node {a} (13);
-\path [->]  (11) edge [loop above] node {a} (11);
-\path [->]  (16) edge [loop above] node {a} (16);
+\path [->]  (12) edge [loop above] node[right,sloped] {c,a} (12);
+\path [->]  (13) edge [loop above] node[right,sloped] {c,a} (13);
+\path [->]  (14) edge [loop above] node[right,sloped] {c,a} (13);
+\path [->]  (15) edge [loop above] node {c,a} (14);
+\path [->]  (11) edge [loop above] node {c,a} (11);
+\path [->]  (16) edge [loop above] node {c,a} (16);
 \path [->]  (12) edge node[above] {u} (16);
 \path [->]  (13) edge node[above] {a} (16);
 \path [->]  (16) edge node {} (17);
+\path [->] (11) edge [bend left=10] node[above] {g} (15);
+\path [->] (11) edge [bend right=10] node[above] {c} (14);
+\path [->] (14) edge [bend right=10] node[above] {g} (16);
+\path [->] (15) edge [bend left=10] node[above] {c} (16);
 
-
-\path [->]  (21) edge node[above] {u} (23);
-\path [->]  (21) edge node[above] {g} (22);
-\path [->]  (22) edge node[above] {u} (26);
-\path [->]  (23) edge node[above] {g} (26);
+\path [->]  (21) edge node[above] {g} (23);
+\path [->]  (21) edge node[above] {c} (22);
+\path [->]  (22) edge [loop above] node {g,a} (22);
+\path [->]  (23) edge [loop above] node {g,a} (23);
+\path [->]  (21) edge [loop above] node {g,a} (21);
+\path [->]  (26) edge [loop above] node {g,a} (26);
+\path [->]  (22) edge node[above] {g} (26);
+\path [->]  (23) edge node[above] {c} (26);
 \path [->]  (26) edge node {} (27);
 
+\path [->]  (31) edge node[above] {u} (33);
+\path [->]  (31) edge node[above] {g} (32);
+\path [->]  (32) edge node[above] {u} (36);
+\path [->]  (33) edge node[above] {g} (36);
+\path [->]  (36) edge node {} (37);
+
+
 \path [->] (auguste) edge [bend left=20] node[left] {${\epsilon}$} (1);
-\path [->] (auguste) edge node[above] {${\epsilon}$} (11);
+\path [->] (auguste) edge [bend left=10] node[left] {${\epsilon}$} (11);
 \path [->] (auguste) edge [bend right=10] node[left] {${\epsilon}$} (21);
+\path [->] (auguste) edge [bend right=20] node[left] {${\epsilon}$} (31);
 \path [->]  (auguste0) edge node {} (auguste);
 
 
 \end{tikzpicture} ${\\}$
+
 \end{document}
+
