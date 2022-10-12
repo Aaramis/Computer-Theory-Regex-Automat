@@ -632,7 +632,7 @@ Expression rationnelle de L${_0}$ : \\
 
 Automate fini de L${_0}$ : \\
 
-\begin{tikzpicture}[node distance=1.7cm,semithick, main/.style = {draw, circle}]
+\begin{tikzpicture}[node distance=1.4cm,semithick, main/.style = {draw, circle}]
 \tab \tab \tab 
 \node[main] (0) {0}; 
 \node (10) [right of=0] {}; 
@@ -650,10 +650,10 @@ Automate fini de L${_0}$ : \\
 (0) edge node[above] {${\epsilon}$} (2)
 (0) edge node[above] {${\epsilon}$} (3)
 (0) edge node[above] {${\epsilon}$} (4)
-(1) edge [loop above] node {a,c} (1)
-(2) edge [loop above] node {a,g} (2)
-(3) edge [loop above] node {u,c} (3)
-(4) edge [loop above] node {u,g} (4)
+(1) edge [loop above] node[right,sloped] {a,c} (1)
+(2) edge [loop above] node[right,sloped] {a,g} (2)
+(3) edge [loop above] node[right,sloped] {u,c} (3)
+(4) edge [loop above] node[right,sloped] {u,g} (4)
 (15) edge node {} (0)
 (1) edge node {} (11)
 (2) edge node {} (12)
@@ -665,7 +665,9 @@ Automate fini de L${_0}$ : \\
 \textit{(b)}  Soit L${_1}$ le plus grand langage sur l\textquoteright alphabet \{a, c, g, u\} qui poss\`ede la propri\'et\'e suivante : quel que soit \textit{w} ${\epsilon}$ L${_1}$, il y a exactement un appariement possible dans
 \textit{w} . Donnez une expression rationnelle et un automate fini pour L${_1}$ . \\
 
-Expression rationnelle de L${_0}$ : \\
+On interpr\`etre la question comme suit :Il peut y avoir plusieurs appariements dans la s\'equence, mais pas simultan\'ement. Ainsi AGU et AAAAU sont dans L1. Mais AAAAUU ne l\textquoteright est pas. 
+
+Expression rationnelle de L${_1}$ : \\
 
 (c | a)${^*}$ a (c | a)${^*}$ u (c | a)${^*}$  | (g | a)${^*}$ a (g | a)${^*}$ u (g | a)${^*}$  | \\
 \tab (c | u)${^*}$ a (c | u)${^*}$ u (c | u)${^*}$  | (g | u)${^*}$ a (g | u)${^*}$ u (g | u)${^*}$  | \\
@@ -674,12 +676,11 @@ Expression rationnelle de L${_0}$ : \\
 \tab (c | u)${^*}$ g (c | u)${^*}$ c (c | u)${^*}$  | (g | u)${^*}$ g (g | u)${^*}$ c (g | u)${^*}$  | \\
 \tab (c | a)${^*}$ g (c | a)${^*}$ c (c | a)${^*}$  | (g | a)${^*}$ g (g | a)${^*}$ c (g | a)${^*}$  | \\
 \tab (c | u)${^*}$ c (c | u)${^*}$ g (c | u)${^*}$  | (g | u)${^*}$ c (g | u)${^*}$ g (g | u)${^*}$  | \\
-\tab (c | a)${^*}$ c (c | a)${^*}$ g (c | a)${^*}$  | (g | a)${^*}$ c (g | a)${^*}$ g (g | a)${^*}$  | \\
+\tab (c | a)${^*}$ c (c | a)${^*}$ g (c | a)${^*}$  | (g | a)${^*}$ c (g | a)${^*}$ g (g | a)${^*}$ \\ \\ \\
 
-Automate fini de L${_0}$ :
+Automate fini de L${_1}$ :
 
 \begin{tikzpicture}[node distance=1.55cm,semithick, main/.style = {draw, circle}]
-\tab 
 \node (0) {}; 
 \node[main] (1) [right of=0] {1}; 
 \node (8) [right of=1] {}; 
@@ -693,12 +694,12 @@ Automate fini de L${_0}$ :
 \node (7) [right of=6] {};
 
 \node (a1) [below of=0] {}; 
-\node (a2) [below of=a1] {}; 
-\node (a3) [below of=a2] {}; 
+\node (a3) [below of=a1] {}; 
 \node (a7) [below of=a3] {}; 
+\node (a8) [right of=a7] {}; 
+\node (a9) [right of=a8] {}; 
 
-
-\node[main] (11) [right of=a7] {7}; 
+\node[main] (11) [right of=a9] {7}; 
 \node (18) [right of=11] {}; 
 \node (110) [above of=11] {}; 
 \node[main] (12) [below right of=18] {8};
@@ -710,8 +711,7 @@ Automate fini de L${_0}$ :
 \node (17) [right of=16] {};
 
 
-\node (b1) [below of=a7] {}; 
-\node (b2) [below of=b1] {}; 
+\node (b2) [below of=a7] {}; 
 \node[main] (auguste) [left of=b2] {0}; 
 \node (auguste0) [left of=auguste] {}; 
 \node (b3) [below of=b2] {}; 
@@ -731,11 +731,11 @@ Automate fini de L${_0}$ :
 
 \node (c1) [below of=b7] {}; 
 \node (c2) [below of=c1] {}; 
-\node (c3) [below of=c2] {}; 
-\node (c7) [below of=c3] {}; 
+\node (c7) [below of=c2] {}; 
+\node (c8) [right of=c7] {}; 
+\node (c9) [right of=c8] {}; 
 
-
-\node[main] (31) [right of=c7] {19}; 
+\node[main] (31) [right of=c9] {19}; 
 \node (38) [right of=31] {}; 
 \node (310) [above of=31] {}; 
 \node[main] (32) [below right of=38] {20};
@@ -752,7 +752,7 @@ Automate fini de L${_0}$ :
 \path [->]  (2) edge [loop above] node[right,sloped] {c,u} (2);
 \path [->]  (3) edge [loop above] node[right,sloped] {c,u} (3);
 \path [->]  (4) edge [loop above] node[right,sloped] {c,u} (3);
-\path [->]  (5) edge [loop above] node[right,sloped] {c,u} (4);
+\path [->]  (5) edge [loop above] node {c,u} (4);
 \path [->]  (1) edge [loop above] node {c,u} (1);
 \path [->]  (6) edge [loop above] node {c,u} (6);
 \path [->]  (2) edge node[above] {u} (6);
@@ -768,7 +768,7 @@ Automate fini de L${_0}$ :
 \path [->]  (12) edge [loop above] node[right,sloped] {c,a} (12);
 \path [->]  (13) edge [loop above] node[right,sloped] {c,a} (13);
 \path [->]  (14) edge [loop above] node[right,sloped] {c,a} (13);
-\path [->]  (15) edge [loop above] node[right,sloped] {c,a} (14);
+\path [->]  (15) edge [loop above] node {c,a} (14);
 \path [->]  (11) edge [loop above] node {c,a} (11);
 \path [->]  (16) edge [loop above] node {c,a} (16);
 \path [->]  (12) edge node[above] {u} (16);
@@ -784,7 +784,7 @@ Automate fini de L${_0}$ :
 \path [->]  (22) edge [loop above] node[right,sloped] {g,a} (22);
 \path [->]  (23) edge [loop above] node[right,sloped] {g,a} (23);
 \path [->]  (24) edge [loop above] node[right,sloped] {g,a} (23);
-\path [->]  (25) edge [loop above] node[right,sloped] {g,a} (24);
+\path [->]  (25) edge [loop above] node {g,a} (24);
 \path [->]  (21) edge [loop above] node {g,a} (21);
 \path [->]  (26) edge [loop above] node {g,a} (26);
 \path [->]  (22) edge node[above] {u} (26);
@@ -800,7 +800,7 @@ Automate fini de L${_0}$ :
 \path [->]  (32) edge [loop above] node[right,sloped] {g,u} (32);
 \path [->]  (33) edge [loop above] node[right,sloped] {g,u} (33);
 \path [->]  (34) edge [loop above] node[right,sloped] {g,u} (33);
-\path [->]  (35) edge [loop above] node[right,sloped] {g,u} (34);
+\path [->]  (35) edge [loop above] node {g,u} (34);
 \path [->]  (31) edge [loop above] node {g,u} (31);
 \path [->]  (36) edge [loop above] node {g,u} (36);
 \path [->]  (32) edge node[above] {u} (36);
@@ -820,5 +820,5 @@ Automate fini de L${_0}$ :
 
 \end{tikzpicture} ${\\}$
 
-
 \end{document}
+
