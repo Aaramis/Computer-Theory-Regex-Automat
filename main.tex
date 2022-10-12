@@ -49,7 +49,7 @@ et finissent par taa. \\
 (5) edge node {a} (6)
 (6) edge node {a} (7)
 (7) edge node {} (8)
-(9) edge node {} (1)
+(9) edge node {} (1);
 \end{tikzpicture} \\ [5mm]
 
 (b) Construisez un automate fini d\'eterministe \`a sept  \'etats pour L\\
@@ -78,7 +78,7 @@ et finissent par taa. \\
 (7) edge [bend left=80] node {a,c,g} (4)
 (7) edge [bend right=60] node {t} (5)
 (7) edge node {} (8)
-(9) edge node {} (1)
+(9) edge node {} (1);
 \end{tikzpicture} \\
 
 \section{Exercice 2.}
@@ -129,7 +129,7 @@ On peut construire un pseudo automate correspondant : \\
 (3) edge [bend left=20] node {u} (7)
 (7) edge [bend left=-7] node {T} (3)
 (3) edge node {} (8)
-(9) edge node {} (1)
+(9) edge node {} (1);
 \end{tikzpicture} \\
 
 En simplifiant on obtient: \\
@@ -141,7 +141,7 @@ En simplifiant on obtient: \\
 \path [->]  
 (1) edge [loop above] node {a,c,g,u} (=1)
 (1) edge node {} (2)
-(3) edge node {} (1)
+(3) edge node {} (1);
 \end{tikzpicture} \\
 
 Grossi\`erement on pouurait m${\hat{e}}$me simplifier la grammaire en ne gardant que : \\ 
@@ -183,30 +183,30 @@ Voici quelques exemples d'arbres pour former le mot \textit{au} : \\
 \node (d) [right of=b] {\textbf{u}}; 
 \node (e) [below of=b] {T}; 
 \node (f) [below of=e] {${\epsilon}$}; 
-\path [->]  (1) edge node {} (2)
-(1) edge node {} (3)
-(2) edge node {} (4)
-(3) edge node {} (5)
-(4) edge node {} (6)
-(4) edge node {} (7)
-(5) edge node {} (8)
-(5) edge node {} (9)
-(6) edge node {} (10)
-(9) edge node {} (11)
-(16) edge node {} (17)
-(17) edge node {} (18)
-(17) edge node {} (19)
-(19) edge node {} (20)
-(19) edge node {} (21)
-(21) edge node {} (22)
-(a) edge node {} (b)
-(a) edge node {} (c)
-(a) edge node {} (d)
-(b) edge node {} (e)
-(e) edge node {} (f)
+\path [->]  (1) edge node {} (2);
+\path [->] (1) edge node {} (3);
+\path [->] (2) edge node {} (4);
+\path [->] (3) edge node {} (5);
+\path [->] (4) edge node {} (6);
+\path [->] (4) edge node {} (7);
+\path [->] (5) edge node {} (8);
+\path [->] (5) edge node {} (9);
+\path [->] (6) edge node {} (10);
+\path [->] (9) edge node {} (11);
+\path [->] (16) edge node {} (17);
+\path [->] (17) edge node {} (18);
+\path [->] (17) edge node {} (19);
+\path [->] (19) edge node {} (20);
+\path [->] (19) edge node {} (21);
+\path [->] (21) edge node {} (22);
+\path [->] (a) edge node {} (b);
+\path [->] (a) edge node {} (c);
+\path [->] (a) edge node {} (d);
+\path [->] (b) edge node {} (e);
+\path [->] (e) edge node {} (f);
 \end{tikzpicture}\\
 
-En r\'ealit\'e, avec la possibilit\'e de faire S ${\rightarrow}$ SS, on peut g\'en\'erer une infinit\'e d\textquoteright  arbres pour former le mot \textit{au}, voir n\textquoteright importe quel mot du langage L(G) = \{a, c, g, u\}${^\text{*}}$. On peut raisonnablement dire que la grammaire G est ambig\"ue.\\
+En r\'ealit\'e, avec la possibilit\'e de faire S ${\rightarrow}$ SS, on peut g\'en\'erer une infinit\'e d\textquoteright  arbres pour former le mot \textit{au}, voir n\textquoteright importe quel mot du langage L(G) = \{a, c, g, u\}${^\text{*}}$. On peut raisonnablement dire que la grammaire G est ambig\"ue.
 
 \textbf{3.} Soit le mot \textit{cccaaaggguuu}. Montrez que, parmi tous les arbres de d\'erivation menant
 \`a ce mot depuis l\textquoteright axiome, il y en a exactement deux qui utilisent trois fois une r\`egle
@@ -245,33 +245,33 @@ du type \\ S ${\rightarrow}$ xSy et qui utilisent une fois la r\`egle S ${\right
 \node (64) [below left of=55] {\textbf{u}};
 \node (65) [below right of=55] {T}; 
 \node (74) [below of=65] {${\epsilon}$};
-\path [->]  (1) edge node {} (21)
-(1) edge node {} (22)
-(21) edge node {} (31)
-(21) edge node {} (32)
-(21) edge node {} (33)
-(32) edge node {} (41)
-(32) edge node {} (42)
-(32) edge node {} (43)
-(41) edge node {} (51)
-(41) edge node {} (52)
-(41) edge node {} (53)
-(51) edge node {} (61)
-(61) edge node {} (71)
-(61) edge node {} (72)
-(72) edge node {} (81)
-(72) edge node {} (82)
-(82) edge node {} (91)
-(82) edge node {} (92)
-(92) edge node {} (101)
-(22) edge node {} (34)
-(34) edge node {} (44)
-(34) edge node {} (45)
-(45) edge node {} (54)
-(45) edge node {} (55)
-(55) edge node {} (64)
-(55) edge node {} (65)
-(65) edge node {} (74)
+\path [->]  (1) edge node {} (21);
+\path [->] (1) edge node {} (22);
+\path [->] (21) edge node {} (31);
+\path [->] (21) edge node {} (32);
+\path [->] (21) edge node {} (33);
+\path [->] (32) edge node {} (41);
+\path [->] (32) edge node {} (42);
+\path [->] (32) edge node {} (43);
+\path [->] (41) edge node {} (51);
+\path [->] (41) edge node {} (52);
+\path [->] (41) edge node {} (53);
+\path [->] (51) edge node {} (61);
+\path [->] (61) edge node {} (71);
+\path [->] (61) edge node {} (72);
+\path [->] (72) edge node {} (81);
+\path [->] (72) edge node {} (82);
+\path [->] (82) edge node {} (91);
+\path [->] (82) edge node {} (92);
+\path [->] (92) edge node {} (101);
+\path [->] (22) edge node {} (34);
+\path [->] (34) edge node {} (44);
+\path [->] (34) edge node {} (45);
+\path [->] (45) edge node {} (54);
+\path [->] (45) edge node {} (55);
+\path [->] (55) edge node {} (64);
+\path [->] (55) edge node {} (65);
+\path [->] (65) edge node {} (74);
 \end{tikzpicture}\\
 
 \textbf{Arbre 2:} \\
@@ -305,35 +305,35 @@ du type \\ S ${\rightarrow}$ xSy et qui utilisent une fois la r\`egle S ${\right
 \node (91) [below left of=82] {\textbf{g}};
 \node (92) [below right of=82] {T}; 
 \node (101) [below of=92] {${\epsilon}$};
-\path [->]  (1) edge node {} (21)
-(1) edge node {} (22)
-(21) edge node {} (200)
-(200) edge node {} (31)
-(200) edge node {} (32)
-(31) edge node {} (41)
-(31) edge node {} (42)
-(41) edge node {} (51)
-(41) edge node {} (52)
-(51) edge node {} (61)
+\path [->]  (1) edge node {} (21);
+\path [->] (1) edge node {} (22);
+\path [->] (21) edge node {} (200);
+\path [->] (200) edge node {} (31);
+\path [->] (200) edge node {} (32);
+\path [->] (31) edge node {} (41);
+\path [->] (31) edge node {} (42);
+\path [->] (41) edge node {} (51);
+\path [->] (41) edge node {} (52);
+\path [->] (51) edge node {} (61);
 
-(22) edge node {} (33)
-(22) edge node {} (34)
-(22) edge node {} (35)
-(34) edge node {} (43)
-(34) edge node {} (44)
-(34) edge node {} (45)
-(43) edge node {} (53)
-(43) edge node {} (54)
-(43) edge node {} (55)
+\path [->] (22) edge node {} (33);
+\path [->] (22) edge node {} (34);
+\path [->] (22) edge node {} (35);
+\path [->] (34) edge node {} (43);
+\path [->] (34) edge node {} (44);
+\path [->] (34) edge node {} (45);
+\path [->] (43) edge node {} (53);
+\path [->] (43) edge node {} (54);
+\path [->] (43) edge node {} (55);
 
-(53) edge node {} (62)
-(62) edge node {} (71)
-(62) edge node {} (72)
-(72) edge node {} (81)
-(72) edge node {} (82)
-(82) edge node {} (91)
-(82) edge node {} (92)
-(92) edge node {} (101)
+\path [->] (53) edge node {} (62);
+\path [->] (62) edge node {} (71);
+\path [->] (62) edge node {} (72);
+\path [->] (72) edge node {} (81);
+\path [->] (72) edge node {} (82);
+\path [->] (82) edge node {} (91);
+\path [->] (82) edge node {} (92);
+\path [->] (92) edge node {} (101);
 
 \end{tikzpicture} ${\\}$
 
@@ -413,7 +413,7 @@ secondaires correspondant respectivement \`a chacun des deux arbres. \\
 (28) edge node {} (29)
 (29) edge node {} (30)
 (30) edge node {} (31)
-(31) edge node {} (32)
+(31) edge node {} (32);
 \end{tikzpicture} ${\\}$ \\
 
 Repr\'esentation de la structure ARN par s\'equence et syst\`eme de parenth\`eses : \\
@@ -574,8 +574,8 @@ secondaire correspondante. \\
 (58) edge node {} (68)
 (68) edge node {} (77)
 (68) edge node {} (78)
-(78) edge node {} (84)
-\end{tikzpicture} ${\\}$
+(78) edge node {} (84);
+\end{tikzpicture} ${\\}$ \\ \\
 
 Structure secondaire correspondante :
 
@@ -616,7 +616,7 @@ Structure secondaire correspondante :
 (8) edge node {} (9)
 (9) edge node {} (10)
 (10) edge node {} (11)
-(11) edge node {} (12)
+(11) edge node {} (12);
 \end{tikzpicture} ${\\}$
 
 
@@ -646,10 +646,10 @@ Automate fini de L${_0}$ : \\
 \node (14) [right of=4] {}; 
 \node (15) [left of=0] {}; 
 
-\path [->]  (0) edge node {${\epsilon}$} (1)
-(0) edge node {${\epsilon}$} (2)
-(0) edge node {${\epsilon}$} (3)
-(0) edge node {${\epsilon}$} (4)
+\path [->]  (0) edge node[above] {${\epsilon}$} (1)
+(0) edge node[above] {${\epsilon}$} (2)
+(0) edge node[above] {${\epsilon}$} (3)
+(0) edge node[above] {${\epsilon}$} (4)
 (1) edge [loop above] node {a,c} (1)
 (2) edge [loop above] node {a,g} (2)
 (3) edge [loop above] node {u,c} (3)
@@ -658,7 +658,7 @@ Automate fini de L${_0}$ : \\
 (1) edge node {} (11)
 (2) edge node {} (12)
 (3) edge node {} (13)
-(4) edge node {} (14)
+(4) edge node {} (14);
 
 \end{tikzpicture} ${\\}$
 
@@ -667,14 +667,158 @@ Automate fini de L${_0}$ : \\
 
 Expression rationnelle de L${_0}$ : \\
 
-(c | g | a)${^*}$ a (c | g | a)${^*}$ u (c | g | a)${^*}$  | (c | g | u)${^*}$ a (c | g | u)${^*}$ u (c | g | u)${^*}$  | \\
-\tab (c | g | a)${^*}$ u (c | g | a)${^*}$ a (c | g | a)${^*}$  | (c | g | u)${^*}$ u (c | g | u)${^*}$ a (c | g | u)${^*}$  | \\
-\tab (c | u | a)${^*}$ g (c | u | a)${^*}$ c (c | u | a)${^*}$  | (a | g | u)${^*}$ g (a | g | u)${^*}$ c (a | g | u)${^*}$  | \\
-\tab (c | u | a)${^*}$ c (c | u | a)${^*}$ g (c | u | a)${^*}$  | (a | g | u)${^*}$ c (a | g | u)${^*}$ g (a | g | u)${^*}$ \\
+(c | a)${^*}$ a (c | a)${^*}$ u (c | a)${^*}$  | (g | a)${^*}$ a (g | a)${^*}$ u (g | a)${^*}$  | \\
+\tab (c | u)${^*}$ a (c | u)${^*}$ u (c | u)${^*}$  | (g | u)${^*}$ a (g | u)${^*}$ u (g | u)${^*}$  | \\
+\tab (c | a)${^*}$ u (c | a)${^*}$ a (c | a)${^*}$  | (g | a)${^*}$ u (g | a)${^*}$ a (g | a)${^*}$  | \\
+\tab (c | u)${^*}$ u (c | u)${^*}$ a (c | u)${^*}$  | (g | u)${^*}$ u (g | u)${^*}$ a (g | u)${^*}$  | \\
+\tab (c | u)${^*}$ g (c | u)${^*}$ c (c | u)${^*}$  | (g | u)${^*}$ g (g | u)${^*}$ c (g | u)${^*}$  | \\
+\tab (c | a)${^*}$ g (c | a)${^*}$ c (c | a)${^*}$  | (g | a)${^*}$ g (g | a)${^*}$ c (g | a)${^*}$  | \\
+\tab (c | u)${^*}$ c (c | u)${^*}$ g (c | u)${^*}$  | (g | u)${^*}$ c (g | u)${^*}$ g (g | u)${^*}$  | \\
+\tab (c | a)${^*}$ c (c | a)${^*}$ g (c | a)${^*}$  | (g | a)${^*}$ c (g | a)${^*}$ g (g | a)${^*}$  | \\
+
+Automate fini de L${_0}$ :
+
+\begin{tikzpicture}[node distance=1.55cm,semithick, main/.style = {draw, circle}]
+\tab 
+\node (0) {}; 
+\node[main] (1) [right of=0] {1}; 
+\node (8) [right of=1] {}; 
+\node (10) [above of=1] {}; 
+\node[main] (2) [below right of=8] {2};
+\node[main] (3) [above of=2] {3}; 
+\node[main] (4) [below of=2] {4};
+\node[main] (5) [above of=3] {5}; 
+\node (9) [above right of=2] {}; 
+\node[main] (6) [right of=9] {6};
+\node (7) [right of=6] {};
+
+\node (a1) [below of=0] {}; 
+\node (a2) [below of=a1] {}; 
+\node (a3) [below of=a2] {}; 
+\node (a7) [below of=a3] {}; 
 
 
+\node[main] (11) [right of=a7] {7}; 
+\node (18) [right of=11] {}; 
+\node (110) [above of=11] {}; 
+\node[main] (12) [below right of=18] {8};
+\node[main] (13) [above of=12] {9}; 
+\node[main] (14) [below of=12] {10};
+\node[main] (15) [above of=13] {11}; 
+\node (19) [above right of=12] {}; 
+\node[main] (16) [right of=19] {12};
+\node (17) [right of=16] {};
 
-Automate fini de L${_0}$ : \\
+
+\node (b1) [below of=a7] {}; 
+\node (b2) [below of=b1] {}; 
+\node[main] (auguste) [left of=b2] {0}; 
+\node (auguste0) [left of=auguste] {}; 
+\node (b3) [below of=b2] {}; 
+\node (b7) [below of=b3] {}; 
+
+
+\node[main] (21) [right of=b7] {13}; 
+\node (28) [right of=21] {}; 
+\node (210) [above of=21] {}; 
+\node[main] (22) [below right of=28] {14};
+\node[main] (23) [above of=22] {15}; 
+\node[main] (24) [below of=22] {16};
+\node[main] (25) [above of=23] {17}; 
+\node (29) [above right of=22] {}; 
+\node[main] (26) [right of=29] {18};
+\node (27) [right of=26] {};
+
+\node (c1) [below of=b7] {}; 
+\node (c2) [below of=c1] {}; 
+\node (c3) [below of=c2] {}; 
+\node (c7) [below of=c3] {}; 
+
+
+\node[main] (31) [right of=c7] {19}; 
+\node (38) [right of=31] {}; 
+\node (310) [above of=31] {}; 
+\node[main] (32) [below right of=38] {20};
+\node[main] (33) [above of=32] {21}; 
+\node[main] (34) [below of=32] {22};
+\node[main] (35) [above of=33] {23}; 
+\node (39) [above right of=32] {}; 
+\node[main] (36) [right of=39] {24};
+\node (37) [right of=36] {};
+
+
+\path [->]  (1) edge node[above] {u} (3);
+\path [->]  (1) edge node[above] {a} (2);
+\path [->]  (2) edge [loop above] node[right,sloped] {c,u} (2);
+\path [->]  (3) edge [loop above] node[right,sloped] {c,u} (3);
+\path [->]  (4) edge [loop above] node[right,sloped] {c,u} (3);
+\path [->]  (5) edge [loop above] node[right,sloped] {c,u} (4);
+\path [->]  (1) edge [loop above] node {c,u} (1);
+\path [->]  (6) edge [loop above] node {c,u} (6);
+\path [->]  (2) edge node[above] {u} (6);
+\path [->]  (3) edge node[above] {a} (6);
+\path [->]  (6) edge node {} (7);
+\path [->] (1) edge [bend left=10] node[above] {g} (5);
+\path [->] (1) edge [bend right=10] node[above] {c} (4);
+\path [->] (4) edge [bend right=10] node[above] {g} (6);
+\path [->] (5) edge [bend left=10] node[above] {c} (6);
+
+\path [->]  (11) edge node[above] {u} (13);
+\path [->]  (11) edge node[above] {a} (12);
+\path [->]  (12) edge [loop above] node[right,sloped] {c,a} (12);
+\path [->]  (13) edge [loop above] node[right,sloped] {c,a} (13);
+\path [->]  (14) edge [loop above] node[right,sloped] {c,a} (13);
+\path [->]  (15) edge [loop above] node[right,sloped] {c,a} (14);
+\path [->]  (11) edge [loop above] node {c,a} (11);
+\path [->]  (16) edge [loop above] node {c,a} (16);
+\path [->]  (12) edge node[above] {u} (16);
+\path [->]  (13) edge node[above] {a} (16);
+\path [->]  (16) edge node {} (17);
+\path [->] (11) edge [bend left=10] node[above] {g} (15);
+\path [->] (11) edge [bend right=10] node[above] {c} (14);
+\path [->] (14) edge [bend right=10] node[above] {g} (16);
+\path [->] (15) edge [bend left=10] node[above] {c} (16);
+
+\path [->]  (21) edge node[above] {u} (23);
+\path [->]  (21) edge node[above] {a} (22);
+\path [->]  (22) edge [loop above] node[right,sloped] {g,a} (22);
+\path [->]  (23) edge [loop above] node[right,sloped] {g,a} (23);
+\path [->]  (24) edge [loop above] node[right,sloped] {g,a} (23);
+\path [->]  (25) edge [loop above] node[right,sloped] {g,a} (24);
+\path [->]  (21) edge [loop above] node {g,a} (21);
+\path [->]  (26) edge [loop above] node {g,a} (26);
+\path [->]  (22) edge node[above] {u} (26);
+\path [->]  (23) edge node[above] {a} (26);
+\path [->]  (26) edge node {} (27);
+\path [->] (21) edge [bend left=10] node[above] {g} (25);
+\path [->] (21) edge [bend right=10] node[above] {c} (24);
+\path [->] (24) edge [bend right=10] node[above] {g} (26);
+\path [->] (25) edge [bend left=10] node[above] {c} (26);
+
+\path [->]  (31) edge node[above] {u} (33);
+\path [->]  (31) edge node[above] {a} (32);
+\path [->]  (32) edge [loop above] node[right,sloped] {g,u} (32);
+\path [->]  (33) edge [loop above] node[right,sloped] {g,u} (33);
+\path [->]  (34) edge [loop above] node[right,sloped] {g,u} (33);
+\path [->]  (35) edge [loop above] node[right,sloped] {g,u} (34);
+\path [->]  (31) edge [loop above] node {g,u} (31);
+\path [->]  (36) edge [loop above] node {g,u} (36);
+\path [->]  (32) edge node[above] {u} (36);
+\path [->]  (33) edge node[above] {a} (36);
+\path [->]  (36) edge node {} (37);
+\path [->] (31) edge [bend left=10] node[above] {g} (35);
+\path [->] (31) edge [bend right=10] node[above] {c} (34);
+\path [->] (34) edge [bend right=10] node[above] {g} (36);
+\path [->] (35) edge [bend left=10] node[above] {c} (36);
+
+\path [->] (auguste) edge [bend left=20] node[left] {${\epsilon}$} (1);
+\path [->] (auguste) edge [bend left=10] node[left] {${\epsilon}$} (11);
+\path [->] (auguste) edge [bend right=10] node[left] {${\epsilon}$} (21);
+\path [->] (auguste) edge [bend right=20] node[left] {${\epsilon}$} (31);
+\path [->]  (auguste0) edge node {} (auguste);
+
+
+\end{tikzpicture} ${\\}$
+
 
 \end{document}
-
