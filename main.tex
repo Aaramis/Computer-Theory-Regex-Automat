@@ -337,7 +337,7 @@ du type \\ S ${\rightarrow}$ xSy et qui utilisent une fois la r\`egle S ${\right
 
 \end{tikzpicture} ${\\}$
 
-Si on veut respecter la r\`egle S ${\rightarrow}$ SS, l\textquoteright uinque solution est de la placer au d\'ebut puisqu\textquoteright aucune r\`egle de S n\textquoteright est de la forme cSu donc rien ne peut substituer SS pour le premier coup. \\
+Si on veut respecter la r\`egle S ${\rightarrow}$ SS, l\textquoteright uinque solution est de la placer au d\'ebut puisqu\textquoteright aucune r\`egle de S n\textquoteright est de la forme cSu (n\'ecessaire pour le mot \textit{cccaaaggguuu}) donc rien ne peut substituer SS pour le premier coup. De m\hat{e}me, comme SS est obligatoirement en premier, cela emp\hat{e}che son utilisation par la suite\\
 
 Puis, si l\textquoteright on souhait respecter la r\`egle 'trois fois S ${\rightarrow}$' xSy, nous somme oblig\'e d\textquoteright utiliser les r\`egles cSg (pour le premier S) ou aSu (pour le second S) trois fois d'affil\'es pour r\'eprondre \`a cette contrainte. Il n\textquoteright y a donc bien que 2 solutions d\textquoteright arbre possible. \\
 
@@ -668,7 +668,7 @@ Expression rationnelle de L${_1}$ : \\
 \tab (c | a)${^*}$ u (c | a)${^*}$ a (c | a)${^*}$ | (c | u)${^*}$ u (c | u)${^*}$ a (c | u)${^*}$  | \\
 \tab (c | a)${^*}$ g (c | a)${^*}$ c (c | a)${^*}$  | (g | a)${^*}$ g (g | a)${^*}$ c (g | a)${^*}$  | \\
 \tab (c | a)${^*}$ c (c | a)${^*}$ g (c | a)${^*}$  | (g | a)${^*}$ c (g | a)${^*}$ g (g | a)${^*}$ | \\ 
-\tab gu | ug \\
+\tab (u)${^*}$g(u)${^*}$u(u)${^*}$ |  (u)${^*}$u(u)${^*}$g(u)${^*}$ | (g)${^*}$g(g)${^*}$u(g)${^*}$ |  (g)${^*}$u(g)${^*}$g(g)${^*}$ \\
 
 
 Automate fini de L${_1}$ :
@@ -731,6 +731,19 @@ Automate fini de L${_1}$ :
 \node[main] (36) [right of=39] {18};
 \node (37) [right of=36] {};
 
+\node (d1) [below of=c7] {}; 
+\node (d2) [below of=d1] {}; 
+\node (d7) [below of=d2] {}; 
+
+\node[main] (41) [right of=d7] {19}; 
+\node (48) [right of=41] {}; 
+\node (410) [above of=41] {}; 
+\node[main] (42) [below right of=48] {20};
+\node[main] (43) [above right of=48] {21}; 
+\node (49) [above right of=42] {}; 
+\node[main] (46) [right of=49] {22};
+\node (47) [right of=46] {};
+
 
 \path [->]  (1) edge node[above] {u} (3);
 \path [->]  (1) edge node[above] {a} (2);
@@ -772,13 +785,27 @@ Automate fini de L${_1}$ :
 \path [->]  (31) edge node[above] {g} (32);
 \path [->]  (32) edge node[above] {u} (36);
 \path [->]  (33) edge node[above] {g} (36);
+\path [->]  (31) edge [loop above] node {u} (31);
+\path [->]  (32) edge [loop above] node {u} (32);
+\path [->]  (33) edge [loop above] node {u} (33);
+\path [->]  (36) edge [loop above] node {u} (36);
 \path [->]  (36) edge node {} (37);
 
+\path [->]  (41) edge node[above] {u} (43);
+\path [->]  (41) edge node[above] {g} (42);
+\path [->]  (42) edge node[above] {u} (46);
+\path [->]  (43) edge node[above] {g} (46);
+\path [->]  (41) edge [loop above] node {g} (41);
+\path [->]  (42) edge [loop above] node {g} (42);
+\path [->]  (43) edge [loop above] node {g} (43);
+\path [->]  (46) edge [loop above] node {g} (46);
+\path [->]  (46) edge node {} (47);
 
 \path [->] (auguste) edge [bend left=20] node[left] {${\epsilon}$} (1);
 \path [->] (auguste) edge [bend left=10] node[left] {${\epsilon}$} (11);
 \path [->] (auguste) edge [bend right=10] node[left] {${\epsilon}$} (21);
 \path [->] (auguste) edge [bend right=20] node[left] {${\epsilon}$} (31);
+\path [->] (auguste) edge [bend right=20] node[left] {${\epsilon}$} (41);
 \path [->]  (auguste0) edge node {} (auguste);
 
 
